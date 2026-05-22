@@ -127,16 +127,6 @@ export default function Navbar({ cursorEnabled, setCursorEnabled }) {
 
         {/* Mobile Hamburger Toggle */}
         <div className="flex md:hidden items-center gap-2">
-          {/* Mobile Cursor Toggle */}
-          <button
-            onClick={() => setCursorEnabled(!cursorEnabled)}
-            className={`p-2 rounded-lg border transition-all text-gray-400 ${
-              cursorEnabled ? "border-[var(--color-secondary)] text-[var(--color-secondary)]" : "border-transparent"
-            }`}
-          >
-            <MousePointerClick size={18} />
-          </button>
-          
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 text-gray-400 hover:text-white"
