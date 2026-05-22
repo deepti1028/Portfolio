@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function CustomCursor({ enabled }) {
   const [visible, setVisible] = useState(false);
+  const [isMobileOrTouch, setIsMobileOrTouch] = useState(false);
   const dotRef = useRef(null);
   const ringRef = useRef(null);
 
@@ -11,7 +12,19 @@ export default function CustomCursor({ enabled }) {
   const ringCoords = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    if (!enabled) {
+    const checkTouchOrMobile = () => {
+      const hasTouch = window.matchMedia("(pointer: coarse)").matches;
+      const isSmallScreen = window.innerWidth < 768;
+      setIsMobileOrTouch(hasTouch || isSmallScreen);
+    };
+
+    checkTouchOrMobile();
+    window.addEventListener("resize", checkTouchOrMobile);
+    return () => window.removeEventListener("resize", checkTouchOrMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!enabled || isMobileOrTouch) {
       document.body.classList.remove("cursor-hover");
       return;
     }
@@ -82,9 +95,9 @@ export default function CustomCursor({ enabled }) {
       cancelAnimationFrame(animFrameId);
       document.body.classList.remove("cursor-hover");
     };
-  }, [enabled]);
+  }, [enabled, isMobileOrTouch]);
 
-  if (!enabled || !visible) return null;
+  if (!enabled || !visible || isMobileOrTouch) return null;
 
   return (
     <>

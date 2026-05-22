@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Terminal as TerminalIcon, Send, Mail, Phone, MapPin, CheckCircle, Github, Linkedin, Code } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Terminal as TerminalIcon, Send, Mail, Phone, MapPin, CheckCircle } from "lucide-react";
 import { resumeData } from "../data";
 
 export default function ContactTerminal() {
@@ -135,7 +135,7 @@ export default function ContactTerminal() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 md:px-8 relative">
+    <section id="contact" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative reveal-on-scroll">
       <div className="radial-overlay bottom-[5%] right-[15%] bg-violet-600" />
       
       <div className="max-w-7xl w-full mx-auto relative z-10">
@@ -287,7 +287,7 @@ export default function ContactTerminal() {
                           value={terminalInput}
                           onChange={(e) => setTerminalInput(e.target.value)}
                           placeholder="Type 'help'..."
-                          className="flex-grow bg-transparent border-none outline-none text-white focus:ring-0 p-0 text-xs font-mono placeholder:text-gray-600"
+                          className="flex-grow min-w-0 bg-transparent border-none outline-none text-white focus:ring-0 p-0 text-xs font-mono placeholder:text-gray-600"
                           autoFocus={false}
                         />
                       </form>

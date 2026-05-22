@@ -1,4 +1,3 @@
-import React from "react";
 import { Youtube, Github, ExternalLink, ShieldCheck, Award } from "lucide-react";
 import { resumeData } from "../data";
 
@@ -6,7 +5,7 @@ export default function Projects() {
   const projects = resumeData.projects;
 
   return (
-    <section id="projects" className="py-20 px-4 md:px-8 relative">
+    <section id="projects" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative reveal-on-scroll">
       <div className="radial-overlay top-[20%] left-[50%] bg-violet-600" />
       
       <div className="max-w-7xl w-full mx-auto relative z-10">
@@ -39,7 +38,7 @@ export default function Projects() {
                 <div>
                   
                   {/* Title & Badge */}
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                     <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">
                       Build Package 0{index + 1}
                     </span>

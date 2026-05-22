@@ -1,78 +1,79 @@
-import React, { useState, useEffect } from "react";
-import { Terminal as TerminalIcon, ShieldAlert, Cpu, Award, ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Terminal as TerminalIcon, Cpu, ArrowRight } from "lucide-react";
 import { resumeData } from "../data";
+
+const TITLES = ["Software Engineer", "Test Automation Specialist", "Full-Stack Developer"];
+
+const LOGS_LIST = [
+  { text: "$ npx playwright test --project=chromium", color: "text-gray-400" },
+  { text: "ℹ Loading Playwright configurations...", color: "text-cyan-400" },
+  { text: "▶ Running E2E test suite in parallel (4 workers)...", color: "text-purple-400" },
+  { text: "✔ [PASS] PB-Health: Secure login auth validation (0.45s)", color: "text-emerald-400" },
+  { text: "✔ [PASS] PB-Health: CI pipeline trigger integrity check (0.82s)", color: "text-emerald-400" },
+  { text: "✔ [PASS] Zscaler: FastAPI endpoint command executions (0.61s)", color: "text-emerald-400" },
+  { text: "✔ [PASS] Zscaler: Checksum backup script generation (0.33s)", color: "text-emerald-400" },
+  { text: "✔ [PASS] Trade-Alert: Groq LLM news sentiment API (1.20s)", color: "text-emerald-400" },
+  { text: "✔ [PASS] Concadmic: Firebase auth state persistent check (0.50s)", color: "text-emerald-400" },
+  { text: "ℹ E2E Run completed. 6 tests passed, 0 failed.", color: "text-green-300 font-bold" },
+  { text: "📊 Automation efficiency: +10 Hours saved/week!", color: "text-yellow-400" },
+  { text: "🚀 Status: READY FOR STABLE DEPLOYMENT", color: "text-cyan-300" },
+  { text: "$ _", color: "text-gray-400 typing-cursor" }
+];
 
 export default function Hero() {
   const [typedTitle, setTypedTitle] = useState("");
-  const titles = ["Software Engineer", "Test Automation Specialist", "Full-Stack Developer"];
   const [titleIndex, setTitleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [terminalLogs, setTerminalLogs] = useState(() => [LOGS_LIST[0]]);
 
-  // Typing effect variables
+  // Typing effect
   useEffect(() => {
-    const currentTitle = titles[titleIndex];
+    const currentTitle = TITLES[titleIndex];
     let typingSpeed = isDeleting ? 40 : 100;
 
     if (!isDeleting && charIndex === currentTitle.length) {
-      // Pause at full text
       typingSpeed = 2000;
-      setIsDeleting(true);
     } else if (isDeleting && charIndex === 0) {
-      setIsDeleting(false);
-      setTitleIndex((prev) => (prev + 1) % titles.length);
       typingSpeed = 300;
     }
 
     const timer = setTimeout(() => {
-      setTypedTitle(
-        currentTitle.substring(0, isDeleting ? charIndex - 1 : charIndex + 1)
-      );
-      setCharIndex((prev) => (isDeleting ? prev - 1 : prev + 1));
+      if (!isDeleting && charIndex === currentTitle.length) {
+        setIsDeleting(true);
+      } else if (isDeleting && charIndex === 0) {
+        setIsDeleting(false);
+        setTitleIndex((prev) => (prev + 1) % TITLES.length);
+      } else {
+        setTypedTitle(
+          currentTitle.substring(0, isDeleting ? charIndex - 1 : charIndex + 1)
+        );
+        setCharIndex((prev) => (isDeleting ? prev - 1 : prev + 1));
+      }
     }, typingSpeed);
 
     return () => clearTimeout(timer);
   }, [charIndex, isDeleting, titleIndex]);
 
-  // Terminal Simulated Playwright Script logs
-  const [terminalLogs, setTerminalLogs] = useState([]);
-  const logsList = [
-    { text: "$ npx playwright test --project=chromium", color: "text-gray-400" },
-    { text: "ℹ Loading Playwright configurations...", color: "text-cyan-400" },
-    { text: "▶ Running E2E test suite in parallel (4 workers)...", color: "text-purple-400" },
-    { text: "✔ [PASS] PB-Health: Secure login auth validation (0.45s)", color: "text-emerald-400" },
-    { text: "✔ [PASS] PB-Health: CI pipeline trigger integrity check (0.82s)", color: "text-emerald-400" },
-    { text: "✔ [PASS] Zscaler: FastAPI endpoint command executions (0.61s)", color: "text-emerald-400" },
-    { text: "✔ [PASS] Zscaler: Checksum backup script generation (0.33s)", color: "text-emerald-400" },
-    { text: "✔ [PASS] Trade-Alert: Groq LLM news sentiment API (1.20s)", color: "text-emerald-400" },
-    { text: "✔ [PASS] Concadmic: Firebase auth state persistent check (0.50s)", color: "text-emerald-400" },
-    { text: "ℹ E2E Run completed. 6 tests passed, 0 failed.", color: "text-green-300 font-bold" },
-    { text: "📊 Automation efficiency: +10 Hours saved/week!", color: "text-yellow-400" },
-    { text: "🚀 Status: READY FOR STABLE DEPLOYMENT", color: "text-cyan-300" },
-    { text: "$ _", color: "text-gray-400 typing-cursor" }
-  ];
-
+  // Terminal simulated log runner loop
   useEffect(() => {
     let currentLogIndex = 0;
-    setTerminalLogs([logsList[0]]);
 
     const interval = setInterval(() => {
       currentLogIndex++;
-      if (currentLogIndex < logsList.length) {
+      if (currentLogIndex < LOGS_LIST.length) {
         setTerminalLogs((prev) => {
-          // Remove cursor from previous line
           const cleaned = prev.map(log => {
             if (log.text.includes("typing-cursor")) {
               return { ...log, text: log.text.replace(" typing-cursor", "").replace("_", "") };
             }
             return log;
           });
-          return [...cleaned, logsList[currentLogIndex]];
+          return [...cleaned, LOGS_LIST[currentLogIndex]];
         });
       } else {
-        // Reset terminal loop
         currentLogIndex = 0;
-        setTerminalLogs([logsList[0]]);
+        setTerminalLogs([LOGS_LIST[0]]);
       }
     }, 1500);
 
@@ -88,7 +89,7 @@ export default function Hero() {
       <div className="radial-overlay top-[20%] left-[10%] bg-violet-600" />
       <div className="radial-overlay bottom-[20%] right-[10%] bg-cyan-600" />
 
-      <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12 items-center relative z-10">
+      <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
         
         {/* Left Column: Heading, Typed Title, Call to Action */}
         <div className="lg:col-span-7 flex flex-col items-start text-left">
@@ -99,7 +100,7 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-[var(--size-h1)] font-extrabold leading-none tracking-tight mb-2 text-white">
+          <h1 className="text-[var(--size-h1)] font-extrabold leading-[1.1] tracking-tight mb-2 text-white">
             Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] via-violet-400 to-[var(--color-secondary)] drop-shadow-[0_0_20px_rgba(139,92,246,0.2)]">{resumeData.personal.name}</span>
           </h1>
 
@@ -149,7 +150,7 @@ export default function Hero() {
               </span>
             </div>
             
-            <div className="terminal-body h-80 min-h-80 flex flex-col justify-start text-left font-mono">
+            <div className="terminal-body h-80 min-h-80 flex flex-col justify-start text-left font-mono text-xs whitespace-pre-wrap break-words overflow-y-auto">
               {terminalLogs.map((log, index) => (
                 <div key={index} className={`mb-1.5 ${log.color}`}>
                   {log.text}

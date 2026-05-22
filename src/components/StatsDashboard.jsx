@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Code2, Flame, Award, Zap } from "lucide-react";
 import { resumeData } from "../data";
 
 export default function StatsDashboard() {
-  const { leetcodeRating, leetcodeSolved, gfgSolved, hackathonsWon, hoursSavedAutomation } = resumeData.statistics;
+  const { leetcodeRating, leetcodeSolved, gfgSolved, hoursSavedAutomation } = resumeData.statistics;
   const totalSolved = leetcodeSolved + gfgSolved;
 
   // Simple state counters for dynamic entrance
@@ -48,10 +48,10 @@ export default function StatsDashboard() {
       clearInterval(ratingInterval);
       clearInterval(hoursInterval);
     };
-  }, []);
+  }, [totalSolved, leetcodeRating, hoursSavedAutomation]);
 
   return (
-    <section id="stats" className="py-12 px-4 md:px-8 relative">
+    <section id="stats" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative reveal-on-scroll">
       <div className="max-w-7xl w-full mx-auto relative z-10">
         
         {/* Section Header */}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import StatsDashboard from "./components/StatsDashboard";
@@ -51,37 +51,12 @@ export default function App() {
 
       {/* Single Page Sections */}
       <main className="relative">
-        
-        {/* SECTION 1: Hero & Simulated Playwright Test Terminal */}
-        <div id="section-hero">
-          <Hero />
-        </div>
-
-        {/* SECTION 2: Code Metrics Row */}
-        <div id="section-stats" className="reveal-on-scroll">
-          <StatsDashboard />
-        </div>
-
-        {/* SECTION 3: Career Timeline DevOps pipeline */}
-        <div id="section-experience" className="reveal-on-scroll">
-          <ExperiencePipeline />
-        </div>
-
-        {/* SECTION 4: Skill Grid Matrix */}
-        <div id="section-skills" className="reveal-on-scroll">
-          <SkillsGrid />
-        </div>
-
-        {/* SECTION 5: Flagship Projects */}
-        <div id="section-projects" className="reveal-on-scroll">
-          <Projects />
-        </div>
-
-        {/* SECTION 6: Email Transmitter & Interactive Terminal */}
-        <div id="section-contact" className="reveal-on-scroll">
-          <ContactTerminal />
-        </div>
-
+        <Hero />
+        <StatsDashboard />
+        <ExperiencePipeline />
+        <SkillsGrid />
+        <Projects />
+        <ContactTerminal />
       </main>
 
       {/* High-fidelity Footer */}

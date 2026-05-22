@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, MousePointerClick, FileText, Github, Linkedin } from "lucide-react";
 import { resumeData } from "../data";
 
@@ -26,21 +26,34 @@ export default function Navbar({ cursorEnabled, setCursorEnabled }) {
         setScrolled(false);
       }
 
-      // Check current visible section to highlight active nav link
+      // Check current visible section using viewport center-distance map
       const sections = ["home", "stats", "experience", "skills", "projects", "contact"];
+      let currentActive = "home";
+      let minDistance = Infinity;
+
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= 120 && rect.bottom >= 120) {
-            setActiveSection(sectionId);
-            break;
+          const viewportCenter = window.innerHeight / 2;
+          const sectionCenter = rect.top + rect.height / 2;
+          const distance = Math.abs(viewportCenter - sectionCenter);
+
+          // Section is considered active if its bounds cross the viewport center zone
+          if (rect.top < window.innerHeight * 0.75 && rect.bottom > window.innerHeight * 0.25) {
+            if (distance < minDistance) {
+              minDistance = distance;
+              currentActive = sectionId;
+            }
           }
         }
       }
+      setActiveSection(currentActive);
     };
 
     window.addEventListener("scroll", handleScroll);
+    // Trigger once on mount to capture initial section
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Play, CheckCircle2, ChevronRight, Terminal as TerminalIcon, Calendar, MapPin, BarChart3 } from "lucide-react";
+import { useState, useEffect, Fragment } from "react";
+import { Play, CheckCircle2, Terminal as TerminalIcon, Calendar, MapPin, BarChart3 } from "lucide-react";
 import { resumeData } from "../data";
 
 export default function ExperiencePipeline() {
@@ -10,8 +10,14 @@ export default function ExperiencePipeline() {
 
   // Mock terminal logging compiled when switching experience tabs
   useEffect(() => {
-    setIsCompiling(true);
-    setConsoleLogs([]);
+    let active = true;
+
+    // Defer state updates to avoid React synchronous render warning
+    const renderTimeout = setTimeout(() => {
+      if (!active) return;
+      setIsCompiling(true);
+      setConsoleLogs([`$ fetch-experience --stage=${activeStage.id}`]);
+    }, 0);
 
     let currentLogIndex = 0;
     const logs = [
@@ -23,9 +29,8 @@ export default function ExperiencePipeline() {
       `$ cat achievements.txt`
     ];
 
-    setConsoleLogs([logs[0]]);
-
     const timer = setInterval(() => {
+      if (!active) return;
       currentLogIndex++;
       if (currentLogIndex < logs.length) {
         setConsoleLogs((prev) => [...prev, logs[currentLogIndex]]);
@@ -35,11 +40,15 @@ export default function ExperiencePipeline() {
       }
     }, 200);
 
-    return () => clearInterval(timer);
+    return () => {
+      active = false;
+      clearTimeout(renderTimeout);
+      clearInterval(timer);
+    };
   }, [activeStage]);
 
   return (
-    <section id="experience" className="py-20 px-4 md:px-8 relative">
+    <section id="experience" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative reveal-on-scroll">
       <div className="radial-overlay top-[30%] right-[5%] bg-emerald-600" />
       
       <div className="max-w-7xl w-full mx-auto relative z-10">
@@ -55,12 +64,12 @@ export default function ExperiencePipeline() {
         </div>
 
         {/* DevOps Pipeline Diagram Row */}
-        <div className="glass-card p-4 md:p-8 mb-12 flex flex-row items-center justify-start md:justify-between gap-4 md:gap-6 overflow-x-auto scrollbar-thin">
+        <div className="glass-card p-4 md:p-8 mb-12 flex flex-row justify-start md:justify-between gap-4 md:gap-6 overflow-x-auto scrollbar-thin">
           {experiences.map((exp, index) => {
             const isActive = activeStage.id === exp.id;
             
             return (
-              <React.Fragment key={exp.id}>
+              <Fragment key={exp.id}>
                 {/* Stage Node */}
                 <button
                   onClick={() => setActiveStage(exp)}
@@ -93,7 +102,7 @@ export default function ExperiencePipeline() {
                       : "bg-gray-800"
                   }`} />
                 )}
-              </React.Fragment>
+              </Fragment>
             );
           })}
         </div>
@@ -107,9 +116,9 @@ export default function ExperiencePipeline() {
             {/* Header info */}
             <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
               <div>
-                <h3 className="text-2xl font-extrabold text-white flex items-center gap-2">
-                  <span>{activeStage.role}</span>
-                  <span className="text-[var(--color-primary)]">@</span>
+                <h3 className="text-2xl font-extrabold text-white leading-tight">
+                  <span>{activeStage.role}</span>{" "}
+                  <span className="text-[var(--color-primary)]">@</span>{" "}
                   <span className="text-[var(--color-secondary)]">{activeStage.company}</span>
                 </h3>
                 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { resumeData } from "../data";
 
 // Custom vector-based neon icons representing each technology
@@ -156,7 +156,7 @@ export default function SkillsGrid() {
     : allSkills.filter(s => s.category === activeFilter);
 
   return (
-    <section id="skills" className="py-20 px-4 md:px-8 relative">
+    <section id="skills" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative reveal-on-scroll">
       <div className="radial-overlay bottom-[10%] left-[5%] bg-cyan-600" />
       
       <div className="max-w-7xl w-full mx-auto relative z-10">
@@ -190,27 +190,35 @@ export default function SkillsGrid() {
 
         {/* Grid Panel */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-          {filteredSkills.map((skill, index) => (
-            <div
-              key={skill.name}
-              className="glass-card p-5 flex flex-col items-center justify-center text-center group interactive-card border-[rgba(255,255,255,0.04)]"
-            >
-              {/* Logo / Tech Vector */}
-              <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                <TechIcon name={skill.name} />
+          {filteredSkills.map((skill) => {
+            const glowClass = 
+              skill.category === "languages" ? "hover:border-[var(--color-primary)] hover:shadow-[0_0_20px_rgba(139,92,246,0.25)]" :
+              skill.category === "frameworks" ? "hover:border-[var(--color-secondary)] hover:shadow-[0_0_20px_rgba(6,182,212,0.25)]" :
+              skill.category === "databases" ? "hover:border-[var(--color-success)] hover:shadow-[0_0_20px_rgba(16,185,129,0.25)]" :
+              "hover:border-amber-500 hover:shadow-[0_0_20px_rgba(245,158,11,0.25)]";
+
+            return (
+              <div
+                key={skill.name}
+                className={`glass-card p-5 flex flex-col items-center justify-center text-center group interactive-card border-[rgba(255,255,255,0.04)] transition-all duration-300 ${glowClass}`}
+              >
+                {/* Logo / Tech Vector */}
+                <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <TechIcon name={skill.name} />
+                </div>
+                
+                {/* Skill Label */}
+                <h4 className="text-sm font-bold text-white font-mono mb-1">
+                  {skill.name}
+                </h4>
+                
+                {/* Category Subtitle */}
+                <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">
+                  {skill.category}
+                </span>
               </div>
-              
-              {/* Skill Label */}
-              <h4 className="text-sm font-bold text-white font-mono mb-1">
-                {skill.name}
-              </h4>
-              
-              {/* Category Subtitle */}
-              <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">
-                {skill.category}
-              </span>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>
