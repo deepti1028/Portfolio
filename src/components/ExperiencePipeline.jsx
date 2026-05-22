@@ -64,7 +64,7 @@ export default function ExperiencePipeline() {
         </div>
 
         {/* DevOps Pipeline Diagram Row */}
-        <div className="glass-card p-4 md:p-8 mb-12 flex flex-row justify-start md:justify-between gap-4 md:gap-6 overflow-x-auto scrollbar-thin">
+        <div className="glass-card p-4 md:p-8 mb-12 flex flex-row items-start justify-start md:justify-between gap-4 md:gap-6 overflow-x-auto scrollbar-thin snap-x">
           {experiences.map((exp, index) => {
             const isActive = activeStage.id === exp.id;
             
@@ -73,7 +73,7 @@ export default function ExperiencePipeline() {
                 {/* Stage Node */}
                 <button
                   onClick={() => setActiveStage(exp)}
-                  className={`pipeline-node flex flex-col items-center min-w-[140px] md:min-w-[160px] p-3 md:p-4 rounded-xl border transition-all duration-300 pointer-events-auto ${
+                  className={`pipeline-node flex flex-col items-center min-w-[140px] md:min-w-[160px] p-3 md:p-4 rounded-xl border transition-all duration-300 pointer-events-auto flex-shrink-0 snap-center ${
                     isActive
                       ? "bg-[rgba(139,92,246,0.08)] border-[var(--color-primary)] text-white glow-violet"
                       : "border-[var(--color-glass-border)] text-gray-400 hover:text-gray-200 hover:border-gray-600 hover:bg-[rgba(255,255,255,0.01)]"
@@ -96,7 +96,7 @@ export default function ExperiencePipeline() {
 
                 {/* Connection Line */}
                 {index < experiences.length - 1 && (
-                  <div className={`flex-grow h-[2px] min-w-[30px] md:min-w-[50px] ${
+                  <div className={`flex-shrink-0 self-start mt-[27px] md:mt-[31px] h-[2px] min-w-[30px] md:min-w-[50px] flex-grow ${
                     experiences.indexOf(activeStage) <= index 
                       ? "bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]" 
                       : "bg-gray-800"

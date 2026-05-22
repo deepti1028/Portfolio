@@ -37,8 +37,7 @@ export default function ContactTerminal() {
   const [terminalInput, setTerminalInput] = useState("");
   const [terminalHistory, setTerminalHistory] = useState([
     { text: "DeeptiOS v1.0.0 - Secure System Active", color: "text-cyan-400 font-bold" },
-    { text: "Type 'help' to audit available commands.", color: "text-gray-500" },
-    { text: "$ ", color: "text-gray-400" }
+    { text: "Type 'help' to audit available commands.", color: "text-gray-500" }
   ]);
 
   const terminalEndRef = useRef(null);
@@ -130,7 +129,7 @@ export default function ContactTerminal() {
         ];
     }
 
-    setTerminalHistory((prev) => [...prev, commandLog, ...responseLogs, { text: "$ ", color: "text-gray-400" }]);
+    setTerminalHistory((prev) => [...prev, commandLog, ...responseLogs]);
     setTerminalInput("");
   };
 
@@ -277,29 +276,24 @@ export default function ContactTerminal() {
 
               {/* Terminal Logs History Screen */}
               <div className="terminal-body h-72 overflow-y-auto flex-grow flex flex-col justify-start text-left font-mono text-xs">
-                {terminalHistory.map((log, index) => {
-                  if (log.text === "$ ") {
-                    return (
-                      <form key={index} onSubmit={handleTerminalSubmit} className="flex items-center gap-1 mt-1">
-                        <span className={log.color}>$</span>
-                        <input 
-                          type="text" 
-                          value={terminalInput}
-                          onChange={(e) => setTerminalInput(e.target.value)}
-                          placeholder="Type 'help'..."
-                          className="flex-grow min-w-0 bg-transparent border-none outline-none text-white focus:ring-0 p-0 text-xs font-mono placeholder:text-gray-600"
-                          autoFocus={false}
-                        />
-                      </form>
-                    );
-                  }
-                  
-                  return (
-                    <div key={index} className={`mb-1.5 ${log.color} break-all`}>
-                      {log.text}
-                    </div>
-                  );
-                })}
+                {terminalHistory.map((log, index) => (
+                  <div key={index} className={`mb-1.5 ${log.color} break-all`}>
+                    {log.text}
+                  </div>
+                ))}
+                
+                {/* Single Active Terminal Input Form */}
+                <form onSubmit={handleTerminalSubmit} className="flex items-center gap-1 mt-1 shrink-0">
+                  <span className="text-gray-400">$</span>
+                  <input 
+                    type="text" 
+                    value={terminalInput}
+                    onChange={(e) => setTerminalInput(e.target.value)}
+                    placeholder="Type 'help'..."
+                    className="flex-grow min-w-0 bg-transparent border-none outline-none text-white focus:ring-0 p-0 text-xs font-mono placeholder:text-gray-600"
+                    autoFocus={false}
+                  />
+                </form>
                 <div ref={terminalEndRef} />
               </div>
 
