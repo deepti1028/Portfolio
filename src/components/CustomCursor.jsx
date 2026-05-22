@@ -6,12 +6,12 @@ class Particle {
     this.x = x;
     this.y = y;
     // Slight random initial velocity, leaning upwards and spreading laterally
-    this.vx = (Math.random() - 0.5) * 1.6;
-    this.vy = (Math.random() - 0.5) * 1.6 - 0.8;
+    this.vx = (Math.random() - 0.5) * 1.8;
+    this.vy = (Math.random() - 0.5) * 1.8 - 0.8;
     this.gravity = 0.04;
     
-    // Sizing
-    this.startSize = 2 + Math.random() * 3.5; // 2px to 5.5px
+    // Increased particle size for a richer, more prominent sparkle trail
+    this.startSize = 4 + Math.random() * 4; // 4px to 8px
     this.size = this.startSize;
     
     // Core portfolio neon theme colors
@@ -62,14 +62,11 @@ export default function CustomCursor({ enabled }) {
   const [visible, setVisible] = useState(false);
   const [isMobileOrTouch, setIsMobileOrTouch] = useState(false);
   const dotRef = useRef(null);
-  const ringRef = useRef(null);
   const canvasRef = useRef(null);
   const particlesRef = useRef([]);
 
   // Target mouse coordinates
   const mouseCoords = useRef({ x: 0, y: 0 });
-  // Interpolated ring coordinates
-  const ringCoords = useRef({ x: 0, y: 0 });
 
   // 1. Detect touch screens or small viewports to disable all cursor tracking
   useEffect(() => {
@@ -169,20 +166,10 @@ export default function CustomCursor({ enabled }) {
     document.addEventListener("mouseleave", onMouseLeave);
     window.addEventListener("mouseover", handleMouseOver);
 
-    // Integrated high-performance loop: trailing outer ring + canvas glitter update
+    // Integrated high-performance loop: canvas glitter update
     let animFrameId;
     const tick = () => {
-      // 1. Trailing outer ring (linear interpolation)
-      const lerpFactor = 0.15;
-      ringCoords.current.x += (mouseCoords.current.x - ringCoords.current.x) * lerpFactor;
-      ringCoords.current.y += (mouseCoords.current.y - ringCoords.current.y) * lerpFactor;
-
-      if (ringRef.current) {
-        ringRef.current.style.left = `${ringCoords.current.x}px`;
-        ringRef.current.style.top = `${ringCoords.current.y}px`;
-      }
-
-      // 2. Canvas glitter particles
+      // Canvas glitter particles
       const canvas = canvasRef.current;
       if (canvas) {
         const ctx = canvas.getContext("2d");
@@ -230,16 +217,6 @@ export default function CustomCursor({ enabled }) {
           top: "-100px",
           opacity: visible ? 1 : 0,
           transition: "opacity 0.25s ease, width 0.2s, height 0.2s, background-color 0.2s"
-        }}
-      />
-      <div 
-        ref={ringRef} 
-        className="custom-cursor-ring" 
-        style={{ 
-          left: "-100px", 
-          top: "-100px",
-          opacity: visible ? 1 : 0,
-          transition: "opacity 0.25s ease, width 0.3s ease-out, height 0.3s ease-out, border-color 0.3s, background-color 0.3s"
         }}
       />
       <canvas
