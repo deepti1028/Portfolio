@@ -111,6 +111,32 @@ export const resumeData = {
         "Utilized Firebase Auth and Firestore for secure user access, real-time chat, and blog CRUD operations.",
         "Awarded 1st prize at the Optica Internal Hackathon for innovative solutions and user-centric design."
       ]
+    },
+    {
+      title: "AutoTest Dashboard",
+      subtitle: "Real-Time Test Orchestration Cockpit",
+      technologies: "React, Node.js, Socket.io, Tailwind CSS, SQLite",
+      demoLink: "#",
+      githubLink: "https://github.com/deepti1028/autotest-dashboard",
+      description: "A centralized dashboard visualizing E2E test runs, failure metrics, and performance heatmaps.",
+      details: [
+        "Ingests live Playwright regression suites payload telemetry to visual dashboard charts in real-time.",
+        "Organizes execution video streams to identify layout shifts and trace bottlenecks dynamically.",
+        "Reduces debugging triaging cycle times by 40% using automated pattern-matching log categorizations."
+      ]
+    },
+    {
+      title: "Sentinel Deploy",
+      subtitle: "DevSecOps Integrity Verification Agent",
+      technologies: "FastAPI, Python, Docker, GitHub Actions, Pytest",
+      demoLink: "#",
+      githubLink: "https://github.com/deepti1028/sentinel-deploy",
+      description: "An automated pre-deployment validator checking API schema rules and system integrity.",
+      details: [
+        "Executes dynamic security scans and schema validations using automated pytest execution flows.",
+        "Orchestrates pre-deployment staging health checks, preventing code regressions in build rollouts.",
+        "Cleans and rolls back test databases dynamically, maintaining highly isolated validation sandboxes."
+      ]
     }
   ],
 
