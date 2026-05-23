@@ -13,6 +13,14 @@ import { resumeData } from "./data";
 export default function App() {
   const [cursorEnabled, setCursorEnabled] = useState(true);
 
+  // Disable browser scroll memory restoration and force scroll to top on load/refresh
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
   // Scroll reveals trigger
   useEffect(() => {
     const handleIntersection = (entries, observer) => {
