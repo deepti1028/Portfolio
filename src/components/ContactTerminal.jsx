@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Terminal as TerminalIcon, Send, Mail, Phone, MapPin, CheckCircle } from "lucide-react";
+import { Terminal as TerminalIcon, Send, Mail, Linkedin, MapPin, CheckCircle } from "lucide-react";
 import { resumeData } from "../data";
 
 export default function ContactTerminal() {
@@ -203,9 +203,16 @@ export default function ContactTerminal() {
 
                   <div className="flex items-center gap-3 text-sm text-gray-300">
                     <div className="p-2 rounded-lg bg-[rgba(6,182,212,0.1)] text-[var(--color-secondary)]">
-                      <Phone size={16} />
+                      <Linkedin size={16} />
                     </div>
-                    <span>{personal.phone}</span>
+                    <a 
+                      href={personal.linkedin} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="hover:text-[var(--color-secondary)] transition-colors duration-300 font-mono text-xs break-all"
+                    >
+                      {personal.linkedin.replace("https://www.", "").replace("https://", "")}
+                    </a>
                   </div>
 
                   <div className="flex items-center gap-3 text-sm text-gray-300">

@@ -5,7 +5,6 @@ export const resumeData = {
     name: "Deepti Jain",
     title: "Software Engineer & Test Automation Specialist",
     email: "deepti.jain2810@gmail.com",
-    phone: "+91-9119354299",
     github: "https://github.com/deepti1028",
     linkedin: "https://www.linkedin.com/in/deepti1028/",
     leetcode: "https://leetcode.com/u/dipti_jain/",
