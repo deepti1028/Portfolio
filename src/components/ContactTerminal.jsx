@@ -41,8 +41,13 @@ export default function ContactTerminal() {
   ]);
 
   const terminalEndRef = useRef(null);
+  const isMountedRef = useRef(false);
 
   useEffect(() => {
+    if (!isMountedRef.current) {
+      isMountedRef.current = true;
+      return;
+    }
     // Scroll terminal to bottom on updates
     if (terminalEndRef.current) {
       terminalEndRef.current.scrollIntoView({ behavior: "smooth" });
