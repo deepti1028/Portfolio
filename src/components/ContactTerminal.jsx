@@ -14,23 +14,49 @@ export default function ContactTerminal() {
     setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.message) return;
     
     setFormStatus("sending");
     
-    // Mock sending event
-    setTimeout(() => {
-      setFormStatus("success");
-      setFormState({ name: "", email: "", message: "" });
-      // Add success log to terminal
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "59ae9856-6528-4b3e-8603-9c35e3c03fa0",
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        })
+      });
+      
+      if (response.ok) {
+        setFormStatus("success");
+        // Save form fields for logs before clearing
+        const senderName = formState.name;
+        const senderEmail = formState.email;
+        setFormState({ name: "", email: "", message: "" });
+        
+        // Add success log to terminal
+        setTerminalHistory((prev) => [
+          ...prev,
+          { text: `Incoming connection from ${senderName} (${senderEmail})...`, color: "text-yellow-400" },
+          { text: "✔ [SUCCESS] Message successfully transmitted to Deepti's inbox!", color: "text-emerald-400" }
+        ]);
+      } else {
+        throw new Error("Transmission failed");
+      }
+    } catch (error) {
+      console.error("Web3Forms transmission error:", error);
+      setFormStatus("idle");
+      // Add error log to terminal
       setTerminalHistory((prev) => [
         ...prev,
-        { text: `Incoming connection from ${formState.name} (${formState.email})...`, color: "text-yellow-400" },
-        { text: "✔ [SUCCESS] Message successfully queued for transmission!", color: "text-emerald-400" }
+        { text: "✘ [ERROR] Transmission system connection failed. Please retry.", color: "text-red-400 font-bold" }
       ]);
-    }, 1500);
+    }
   };
 
   // Terminal CLI State
