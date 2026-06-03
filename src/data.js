@@ -11,8 +11,9 @@ export const resumeData = {
     gfg: "https://www.geeksforgeeks.org/user/deeptihnd000/",
     resumeDrive: "https://drive.google.com/file/d/1X5X8_eT50Q94G-1J-yB8x3eUv6qE8OAp/view?usp=sharing", // Customizable Drive URL placeholder
     location: "Gurgaon, India",
-    summary: "Software Engineer with experience in building scalable applications and automation systems using MERN, FastAPI, Python, and TypeScript. Currently a Software Test Engineer at PB Health, leading end-to-end automation with Playwright. Strong foundation in DSA, System Design, and core CS fundamentals, with prior industry experience at Zscaler. Passionate about building reliable, high-performance systems."
+    summary: "Software engineer building across iOS, AI backends, full-stack web, and test automation — the kind who reads the docs, traces the bug to root cause, and ships it clean. Writes tests too, because once you've spent enough time hunting bugs, preventing them starts feeling like a sport. Always running on matcha; espresso is reserved for the dark all-nighters that somehow flip into breakthrough moments right when you finally find the thing. Genuinely loves hanging out with AI agents — who walks away from coworkers that quietly take tasks off your plate? Night owl or early bird depending on what's on fire. Always up for a new café and a harder problem."
   },
+
   
   statistics: {
     leetcodeRating: 1728,
@@ -86,16 +87,34 @@ export const resumeData = {
 
   projects: [
     {
+      title: "ReelMind",
+      subtitle: "AI-Powered Reel Library with RAG Chat",
+      technologies: "Swift, SwiftUI, FastAPI, Celery, Redis, Supabase, Groq, Gemini API",
+      demoLink: "#",
+      githubLink: "#",
+      badge: { label: "iOS + RAG Pipeline", color: "violet" },
+      demoType: "demo",
+      description: "An iOS reel library with a fault-tolerant async ingestion pipeline and RAG-powered natural language search over transcripts.",
+      details: [
+        "Engineered a fault-tolerant 7-stage async ingestion pipeline (FastAPI + Celery + Redis): DASH manifest audio extraction → Groq Whisper transcription → Gemini classification with confidence-score routing → 768-dim vector embedding generation → FCM push with dynamic action buttons.",
+        "Architected a RAG pipeline — embedded transcript, caption, and hashtag signals as 768-dim vectors (Gemini Embedding API) into Supabase pgvector, serving natural-language Q&A via Gemini 2.5 Flash with grounded context retrieval.",
+        "Implemented an iOS Share Extension with cross-process JWT propagation via App Group UserDefaults, enabling one-tap reel capture from the native share sheet without an in-app auth flow.",
+        "Built an NSCache-backed CachedAsyncImage with prefetch-on-load across the reel feed, eliminating redundant thumbnail fetches and decoupling image display from live network state."
+      ]
+    },
+    {
       title: "Trade Alert",
       subtitle: "Real-Time Stock News Notifier",
       technologies: "MERN, LangChain, Puppeteer, Firebase FCM",
       demoLink: "https://www.youtube.com/watch?v=BYqgeYKpoJs",
       githubLink: "https://github.com/XoXoHarsh/Trade-Alert",
-      description: "A secure automated alert system analyzing financial reports.",
+      badge: { label: "Real-Time Analytics", color: "violet" },
+      demoType: "youtube",
+      description: "A secure automated alert system analyzing financial news using LLMs to deliver personalized stock insights.",
       details: [
-        "Designed and implemented a real-time alert system that analyzes financial news using LLMs via Groq API to predict stock sentiment and send actionable insights.",
-        "Developed a multi-source scraping engine with Puppeteer to extract news from 8+ financial websites, using user-specific filters for companies and priority levels.",
-        "Integrated Firebase Cloud Messaging (FCM) and email notifications to deliver critical stock updates in real time."
+        "Developed a multi-source news scraping engine with Puppeteer across 8+ financial news portals, with user-configurable company and priority filters for personalized alert targeting.",
+        "Built a two-stage LLM pipeline using LangChain + Groq (Llama 3.1 70B) to summarize raw scraped articles into concise stock market insights and identify which user-tracked companies are impacted.",
+        "Integrated Pinecone vector search to semantically match news embeddings against a company index for relevant stock detection; containerized all services with Docker for scalable deployment."
       ]
     },
     {
@@ -104,37 +123,13 @@ export const resumeData = {
       technologies: "React, Firebase, Bootstrap",
       demoLink: "https://concadmic.web.app/",
       githubLink: "https://github.com/deepti1028/Concadmic",
-      description: "Campus-focused blogging & blogging platform for college communities.",
+      badge: { label: "1st Prize Hackathon", color: "yellow" },
+      demoType: "external",
+      description: "Campus-focused networking and blogging platform for students to share updates, resources, and opportunities.",
       details: [
-        "Campus-focused blog and networking site for students to share college-specific updates, resources, & opportunities.",
+        "Built a campus-focused blog and networking site for students to share college-specific updates, resources, and opportunities.",
         "Utilized Firebase Auth and Firestore for secure user access, real-time chat, and blog CRUD operations.",
         "Awarded 1st prize at the Optica Internal Hackathon for innovative solutions and user-centric design."
-      ]
-    },
-    {
-      title: "AutoTest Dashboard",
-      subtitle: "Real-Time Test Orchestration Cockpit",
-      technologies: "React, Node.js, Socket.io, Tailwind CSS, SQLite",
-      demoLink: "#",
-      githubLink: "https://github.com/deepti1028/autotest-dashboard",
-      description: "A centralized dashboard visualizing E2E test runs, failure metrics, and performance heatmaps.",
-      details: [
-        "Ingests live Playwright regression suites payload telemetry to visual dashboard charts in real-time.",
-        "Organizes execution video streams to identify layout shifts and trace bottlenecks dynamically.",
-        "Reduces debugging triaging cycle times by 40% using automated pattern-matching log categorizations."
-      ]
-    },
-    {
-      title: "Sentinel Deploy",
-      subtitle: "DevSecOps Integrity Verification Agent",
-      technologies: "FastAPI, Python, Docker, GitHub Actions, Pytest",
-      demoLink: "#",
-      githubLink: "https://github.com/deepti1028/sentinel-deploy",
-      description: "An automated pre-deployment validator checking API schema rules and system integrity.",
-      details: [
-        "Executes dynamic security scans and schema validations using automated pytest execution flows.",
-        "Orchestrates pre-deployment staging health checks, preventing code regressions in build rollouts.",
-        "Cleans and rolls back test databases dynamically, maintaining highly isolated validation sandboxes."
       ]
     }
   ],
