@@ -109,11 +109,12 @@ export const resumeData = {
       githubLink: "https://github.com/XoXoHarsh/Trade-Alert",
       badge: { label: "Real-Time Analytics", color: "violet" },
       demoType: "youtube",
-      description: "A secure automated alert system analyzing financial news using LLMs to deliver personalized stock insights.",
+      description: "By the time financial news reaches you — through Twitter, a forward, or some app — the stock has already moved. That's the window you missed. Trade Alert monitors the financial sources that actually set market sentiment, filters only for the stocks you're watching, and gets it to you before it's priced in.",
       details: [
-        "Developed a multi-source news scraping engine with Puppeteer across 8+ financial news portals, with user-configurable company and priority filters for personalized alert targeting.",
-        "Built a two-stage LLM pipeline using LangChain + Groq (Llama 3.1 70B) to summarize raw scraped articles into concise stock market insights and identify which user-tracked companies are impacted.",
-        "Integrated Pinecone vector search to semantically match news embeddings against a company index for relevant stock detection; containerized all services with Docker for scalable deployment."
+        "Scraped 8+ financial news portals with Puppeteer — most of these portals render content client-side, so a raw HTTP fetch returns empty HTML. Per-user company and priority filters are applied at ingestion time to skip processing irrelevant articles entirely.",
+        "Ran articles through a two-stage LangChain + Groq (Llama 3.1 70B) pipeline: first pass condenses raw scraped text into a market-relevant summary, second pass extracts which user-tracked companies are mentioned. Splitting the stages kept each prompt narrowly focused — combined prompts produced noisier company detection.",
+        "Used Pinecone to match news against the company index semantically rather than by string — catches references like 'AAPL', 'Cupertino giant', or a CEO mention all resolving to the same watchlist entry.",
+        "Final step fires a Firebase FCM push notification to the user's device. End-to-end flow — scrape → summarize → match → notify — runs in seconds."
       ]
     },
     {
