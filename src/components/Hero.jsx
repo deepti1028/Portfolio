@@ -96,10 +96,10 @@ export default function Hero() {
         {/* Left Column: Heading, Typed Title, Call to Action */}
         <div className="lg:col-span-7 flex flex-col items-start text-left">
           {/* Cyberpunk Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/20 bg-violet-500/5 mb-6">
+          {/* <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/20 bg-violet-500/5 mb-6">
             <Cpu size={14} className="text-[var(--color-primary)] animate-pulse" />
             <span className="text-xs font-mono text-violet-300 tracking-wider uppercase">Systems & Test Automation</span>
-          </div>
+          </div> */}
 
           {/* Headline */}
           <h1 className="text-[var(--size-h1)] font-extrabold leading-[1.1] tracking-tight mb-2 text-white">
