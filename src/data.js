@@ -94,12 +94,11 @@ export const resumeData = {
       githubLink: "#",
       badge: { label: "iOS + RAG Pipeline", color: "violet" },
       demoType: "demo",
-      description: "An iOS reel library with a fault-tolerant async ingestion pipeline and RAG-powered natural language search over transcripts.",
+      description: "Have you ever saved an Instagram Reel — a travel guide, a recipe, a workout — and weeks later, when you actually needed it, couldn't find it buried under 100 others? ReelMind fixes that. It automatically organizes everything you save, so you can find it later just by describing what you remember.",
       details: [
-        "Engineered a fault-tolerant 7-stage async ingestion pipeline (FastAPI + Celery + Redis): DASH manifest audio extraction → Groq Whisper transcription → Gemini classification with confidence-score routing → 768-dim vector embedding generation → FCM push with dynamic action buttons.",
-        "Architected a RAG pipeline — embedded transcript, caption, and hashtag signals as 768-dim vectors (Gemini Embedding API) into Supabase pgvector, serving natural-language Q&A via Gemini 2.5 Flash with grounded context retrieval.",
-        "Implemented an iOS Share Extension with cross-process JWT propagation via App Group UserDefaults, enabling one-tap reel capture from the native share sheet without an in-app auth flow.",
-        "Built an NSCache-backed CachedAsyncImage with prefetch-on-load across the reel feed, eliminating redundant thumbnail fetches and decoupling image display from live network state."
+        "Built a 7-stage async ingestion pipeline on FastAPI + Celery + Redis with fault-tolerant retries at each stage — so a failed classification or a flaky API call doesn't silently drop a reel from your library.",
+        "Search runs on a RAG pipeline: reel content gets embedded as 768-dim vectors via Gemini Embedding API, stored in Supabase pgvector, and queried with semantic similarity at runtime — Gemini 2.5 Flash then generates a grounded answer with the retrieved context.",
+        "Once a reel finishes processing, the backend triggers Firebase Cloud Messaging to deliver a push notification with dynamic action buttons to the iOS client — closing the loop between background ingestion and what the user actually sees."
       ]
     },
     {
