@@ -125,11 +125,11 @@ export const resumeData = {
       githubLink: "https://github.com/deepti1028/Concadmic",
       badge: { label: "1st Prize Hackathon", color: "yellow" },
       demoType: "external",
-      description: "Campus-focused networking and blogging platform for students to share updates, resources, and opportunities.",
+      description: "The COVID batch joined college without setting foot on campus. All the knowledge that normally travels through mess queues, hostel corridors, and cafe runs — which elective is worth it, which professor actually teaches, what clubs are real — had no channel to travel through. Concademic was that channel: a campus-only platform where seniors could reach the juniors who needed them.",
       details: [
-        "Built a campus-focused blog and networking site for students to share college-specific updates, resources, and opportunities.",
-        "Utilized Firebase Auth and Firestore for secure user access, real-time chat, and blog CRUD operations.",
-        "Awarded 1st prize at the Optica Internal Hackathon for innovative solutions and user-centric design."
+        "Built a full direct messaging system — user search, conversation threads, real-time message delivery — where messages appear on both sides the moment they're sent, no polling. Scoped chat state to a dedicated React Context so incoming message callbacks don't trigger re-renders across the blog feed or events page.",
+        "Built category and tag filtering as two independent discovery paths, each with its own route, so a post tagged 'internship' under 'placements' shows up in both browse flows the moment it goes live — no extra step, no duplication.",
+        "Built the full post authoring flow — create, edit, delete — with tags and category assigned at write time, so content is structured and queryable from the moment it's published rather than needing retroactive organization."
       ]
     }
   ],
