@@ -82,6 +82,7 @@ export default function Projects() {
             return (
               <div
                 key={project.title}
+                id={project.title.toLowerCase()}
                 className={`glass-card p-6 md:p-8 flex flex-col justify-between ${glowClass} ${borderHoverClass} transition-all duration-300`}
               >
                 {/* Upper Section */}

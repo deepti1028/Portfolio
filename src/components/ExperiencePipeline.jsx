@@ -153,9 +153,10 @@ export default function ExperiencePipeline() {
               {activeStage.bulletPoints.map((bullet, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-[var(--color-primary)]" />
-                  <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                    {bullet}
-                  </p>
+                  <p 
+                    className="text-gray-300 text-sm md:text-base leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: bullet }}
+                  />
                 </li>
               ))}
             </ul>

@@ -10,7 +10,6 @@ export default function Navbar({ cursorEnabled, setCursorEnabled }) {
   // Nav Links
   const navLinks = [
     { name: "Terminal", href: "#home" },
-    { name: "Stats", href: "#stats" },
     { name: "Pipeline", href: "#experience" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
@@ -27,7 +26,7 @@ export default function Navbar({ cursorEnabled, setCursorEnabled }) {
       }
 
       // Check current visible section using viewport center-distance map
-      const sections = ["home", "stats", "experience", "skills", "projects", "contact"];
+      const sections = ["home", "experience", "skills", "projects", "contact"];
       let currentActive = "home";
       let minDistance = Infinity;
 

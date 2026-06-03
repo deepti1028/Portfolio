@@ -138,7 +138,7 @@ export const resumeData = {
     frameworks: ["React", "Node.js", "Express", "FastAPI", "SwiftUI", "Playwright", "Pytest", "Bootstrap", "LangChain"],
     aiml: ["Groq API", "Gemini API", "RAG", "Pinecone", "pgvector"],
     cloudAndDb: ["PostgreSQL", "MongoDB", "MySQL", "Firebase", "Supabase", "Redis", "Docker", "Jenkins", "Celery", "CI/CD"],
-    tools: ["Git", "GitHub", "Puppeteer", "Postman", "VS Code", "Sublime Text"]
+    tools: ["Git", "GitHub", "Puppeteer"]
   },
 
   achievements: [

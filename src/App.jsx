@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import StatsDashboard from "./components/StatsDashboard";
 import ExperiencePipeline from "./components/ExperiencePipeline";
 import SkillsGrid from "./components/SkillsGrid";
 import Projects from "./components/Projects";
@@ -60,7 +59,6 @@ export default function App() {
       {/* Single Page Sections */}
       <main className="relative">
         <Hero />
-        <StatsDashboard />
         <ExperiencePipeline />
         <SkillsGrid />
         <Projects />
@@ -85,10 +83,10 @@ export default function App() {
           </div>
 
           {/* Core statement */}
-          <p className="text-xs font-mono text-gray-500 flex items-center gap-1">
-            <span>Built with React + Custom CSS. Engineered with</span>
-            <Heart size={10} className="text-red-500 fill-current animate-pulse" />
-            <span>&amp; Playwright validation.</span>
+          <p className="text-xs font-mono text-gray-500 flex flex-wrap items-center justify-center text-center md:text-left gap-1.5">
+            <span>Tracing the bugs and shipping clean code with</span>
+            <Heart size={10} className="text-red-500 fill-current animate-pulse inline-block" />
+            <span>&amp; zero regressions.</span>
           </p>
 
           {/* Social Profiles */}
