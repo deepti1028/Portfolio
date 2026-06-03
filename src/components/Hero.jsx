@@ -2,22 +2,24 @@ import { useState, useEffect } from "react";
 import { Terminal as TerminalIcon, Cpu, ArrowRight } from "lucide-react";
 import { resumeData } from "../data";
 
-const TITLES = ["Software Engineer", "Test Automation Specialist", "Full-Stack Developer"];
+const TITLES = ["iOS Developer", "AI Engineer", "Full-Stack Dev", "Test Automator"];
 
 const LOGS_LIST = [
-  { text: "$ npx playwright test --project=chromium", color: "text-gray-400" },
-  { text: "ℹ Loading Playwright configurations...", color: "text-cyan-400" },
-  { text: "▶ Running E2E test suite in parallel (4 workers)...", color: "text-purple-400" },
-  { text: "✔ [PASS] PB-Health: Secure login auth validation (0.45s)", color: "text-emerald-400" },
-  { text: "✔ [PASS] PB-Health: CI pipeline trigger integrity check (0.82s)", color: "text-emerald-400" },
-  { text: "✔ [PASS] Zscaler: FastAPI endpoint command executions (0.61s)", color: "text-emerald-400" },
-  { text: "✔ [PASS] Zscaler: Checksum backup script generation (0.33s)", color: "text-emerald-400" },
-  { text: "✔ [PASS] Trade-Alert: Groq LLM news sentiment API (1.20s)", color: "text-emerald-400" },
-  { text: "✔ [PASS] Concadmic: Firebase auth state persistent check (0.50s)", color: "text-emerald-400" },
-  { text: "ℹ E2E Run completed. 6 tests passed, 0 failed.", color: "text-green-300 font-bold" },
-  { text: "📊 Automation efficiency: +10 Hours saved/week!", color: "text-yellow-400" },
-  { text: "🚀 Status: READY FOR STABLE DEPLOYMENT", color: "text-cyan-300" },
-  { text: "$ _", color: "text-gray-400 typing-cursor" }
+  { text: '$ git commit -m "fix: finally found the bug"', color: "text-gray-400" },
+  { text: "[main a3f91c2] fix: finally found the bug", color: "text-gray-500" },
+  { text: " It was a missing await. 45 minutes. A missing await.", color: "text-orange-400" },
+  { text: "", color: "text-gray-400" },
+  { text: "$ git push origin main", color: "text-gray-400" },
+  { text: "Writing objects: 100% ✓", color: "text-gray-500" },
+  { text: "", color: "text-gray-400" },
+  { text: "$ gh run watch", color: "text-gray-400" },
+  { text: "  ✓ lint         4s", color: "text-emerald-400" },
+  { text: "  ✓ tests        11s   # 800+ LC problems. tests don't scare me.", color: "text-emerald-400" },
+  { text: "  ✓ build        8s", color: "text-emerald-400" },
+  { text: "  ✓ deploy       9s", color: "text-emerald-400" },
+  { text: "", color: "text-gray-400" },
+  { text: "All checks passed. 🍵 Matcha earned.", color: "text-green-300 font-bold" },
+  { text: "$ _", color: "text-gray-400 typing-cursor" },
 ];
 
 export default function Hero() {
@@ -146,7 +148,7 @@ export default function Hero() {
               </div>
               <span className="text-xs font-mono text-gray-400 flex items-center gap-1.5">
                 <TerminalIcon size={12} className="text-emerald-400" />
-                playwright-runner.js
+                git-push.sh
               </span>
             </div>
             
