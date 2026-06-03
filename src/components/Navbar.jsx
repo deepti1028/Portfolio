@@ -100,7 +100,7 @@ export default function Navbar({ cursorEnabled, setCursorEnabled }) {
         {/* Controls (Cursor Toggle + Drive Resume) */}
         <div className="hidden lg:flex items-center gap-4">
           {/* Cursor Toggle Button */}
-          <button
+          {/* <button
             onClick={() => setCursorEnabled(!cursorEnabled)}
             className={`p-2 rounded-lg border transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer text-xs font-mono ${
               cursorEnabled
@@ -111,7 +111,7 @@ export default function Navbar({ cursorEnabled, setCursorEnabled }) {
           >
             <MousePointerClick size={16} />
             <span>Cursor</span>
-          </button>
+          </button> */}
 
           {/* Download/View Resume */}
           <a
