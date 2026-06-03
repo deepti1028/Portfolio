@@ -85,13 +85,13 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center justify-center pt-28 md:pt-32 pb-12 px-4 md:px-8 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center pt-20 md:pt-24 pb-10 px-4 md:px-8 overflow-hidden"
     >
       {/* Background Accent Mesh Glows */}
       <div className="radial-overlay top-[20%] left-[10%] bg-violet-600" />
       <div className="radial-overlay bottom-[20%] right-[10%] bg-cyan-600" />
 
-      <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
+      <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-10 items-center relative z-10">
         
         {/* Left Column: Heading, Typed Title, Call to Action */}
         <div className="lg:col-span-7 flex flex-col items-start text-left">
@@ -107,7 +107,7 @@ export default function Hero() {
           </h1>
 
           {/* Subheading: Dynamic Typing */}
-          <div className="h-10 md:h-12 flex items-center mb-6">
+          <div className="h-8 md:h-10 flex items-center mb-5">
             <h2 className="text-[var(--size-h3)] font-mono text-[var(--color-secondary)] font-semibold flex items-center">
               <span>{typedTitle}</span>
               <span className="inline-block w-[3px] h-[1.5em] bg-[var(--color-secondary)] ml-1 animate-pulse" />
@@ -115,7 +115,7 @@ export default function Hero() {
           </div>
 
           {/* Summary paragraph */}
-          <p className="text-base md:text-lg text-gray-400 max-w-xl mb-8 leading-relaxed">
+          <p className="text-sm md:text-base text-gray-400 max-w-xl mb-7 leading-relaxed">
             {resumeData.personal.summary}
           </p>
 
@@ -152,7 +152,7 @@ export default function Hero() {
               </span>
             </div>
             
-            <div className="terminal-body h-80 min-h-80 flex flex-col justify-start text-left font-mono text-xs whitespace-pre-wrap break-words overflow-y-auto">
+            <div className="terminal-body h-64 min-h-64 flex flex-col justify-start text-left font-mono text-xs whitespace-pre-wrap break-words overflow-y-auto">
               {terminalLogs.map((log, index) => (
                 <div key={index} className={`mb-1.5 ${log.color}`}>
                   {log.text}

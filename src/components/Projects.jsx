@@ -56,14 +56,14 @@ export default function Projects() {
   const projects = resumeData.projects;
 
   return (
-    <section id="projects" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative reveal-on-scroll">
+    <section id="projects" className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 relative reveal-on-scroll">
       <div className="radial-overlay top-[20%] left-[50%] bg-violet-600" />
 
       <div className="max-w-7xl w-full mx-auto relative z-10">
 
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-[var(--size-h2)] font-extrabold text-white mb-2">
+        <div className="text-center mb-10 md:mb-12">
+          <h2 className="text-[var(--size-h2)] font-bold text-white mb-2">
             Flagship Engineering Projects
           </h2>
           <p className="text-sm font-mono text-[var(--color-secondary)] uppercase tracking-widest">
@@ -72,7 +72,7 @@ export default function Projects() {
         </div>
 
         {/* Project Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => {
             const glowClass = project.badge?.color === "yellow" ? "glow-cyan" : "glow-violet";
             const borderHoverClass = project.badge?.color === "yellow"
@@ -83,7 +83,7 @@ export default function Projects() {
               <div
                 key={project.title}
                 id={project.title.toLowerCase()}
-                className={`glass-card p-6 md:p-8 flex flex-col justify-between ${glowClass} ${borderHoverClass} transition-all duration-300`}
+                className={`glass-card p-5 md:p-6 flex flex-col justify-between ${glowClass} ${borderHoverClass} transition-all duration-300`}
               >
                 {/* Upper Section */}
                 <div>
@@ -97,7 +97,7 @@ export default function Projects() {
                   </div>
 
                   {/* Project Name */}
-                  <h3 className="text-2xl font-extrabold text-white mb-1">
+                  <h3 className="text-xl font-bold text-white mb-1">
                     {project.title}
                   </h3>
 
@@ -112,7 +112,7 @@ export default function Projects() {
                   </p>
 
                   {/* Bullet details */}
-                  <div className="mb-6 space-y-3">
+                  <div className="mb-5 space-y-2.5">
                     {project.details.map((detail, dIdx) => (
                       <div key={dIdx} className="flex items-start gap-2.5">
                         <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[var(--color-secondary)] flex-shrink-0" />

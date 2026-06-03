@@ -48,14 +48,14 @@ export default function ExperiencePipeline() {
   }, [activeStage]);
 
   return (
-    <section id="experience" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative reveal-on-scroll">
+    <section id="experience" className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 relative reveal-on-scroll">
       <div className="radial-overlay top-[30%] right-[5%] bg-emerald-600" />
       
       <div className="max-w-7xl w-full mx-auto relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-[var(--size-h2)] font-extrabold text-white mb-2">
+        <div className="text-center mb-10 md:mb-12">
+          <h2 className="text-[var(--size-h2)] font-bold text-white mb-2">
             Professional Pipeline Timeline
           </h2>
           <p className="text-sm font-mono text-[var(--color-secondary)] uppercase tracking-widest">
@@ -64,7 +64,7 @@ export default function ExperiencePipeline() {
         </div>
 
         {/* DevOps Pipeline Diagram Row */}
-        <div className="glass-card mb-12">
+        <div className="glass-card mb-8">
           <div className="p-4 md:p-8 flex flex-row items-start justify-start md:justify-between gap-4 md:gap-6 overflow-x-auto scrollbar-thin snap-x w-full">
             {experiences.map((exp, index) => {
               const isActive = activeStage.id === exp.id;
@@ -118,7 +118,7 @@ export default function ExperiencePipeline() {
             {/* Header info */}
             <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
               <div>
-                <h3 className="text-2xl font-extrabold text-white leading-tight">
+                <h3 className="text-xl font-bold text-white leading-tight">
                   <span>{activeStage.role}</span>{" "}
                   <span className="text-[var(--color-primary)]">@</span>{" "}
                   <span className="text-[var(--color-secondary)]">{activeStage.company}</span>
@@ -149,12 +149,12 @@ export default function ExperiencePipeline() {
             </div>
 
             {/* Bullet achievements */}
-            <ul className="space-y-4 mb-8">
+            <ul className="space-y-3 mb-6">
               {activeStage.bulletPoints.map((bullet, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-[var(--color-primary)]" />
-                  <p 
-                    className="text-gray-300 text-sm md:text-base leading-relaxed"
+                  <p
+                    className="text-gray-300 text-sm leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: bullet }}
                   />
                 </li>
@@ -191,7 +191,7 @@ export default function ExperiencePipeline() {
                 </span>
               </div>
               
-              <div className="terminal-body h-72 min-h-72 flex flex-col justify-start text-left font-mono text-xs">
+              <div className="terminal-body h-56 min-h-56 flex flex-col justify-start text-left font-mono text-xs">
                 {consoleLogs.map((log, index) => (
                   <div key={index} className="mb-2 text-emerald-400">
                     {log}

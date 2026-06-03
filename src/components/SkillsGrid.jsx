@@ -71,7 +71,7 @@ export default function SkillsGrid() {
   return (
     <section
       id="skills"
-      className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 relative reveal-on-scroll overflow-hidden"
+      className="py-14 md:py-24 px-4 sm:px-6 lg:px-8 relative reveal-on-scroll overflow-hidden"
     >
       {/* Ambient orb — sits behind the diamond centre */}
       <div
@@ -85,8 +85,8 @@ export default function SkillsGrid() {
       <div className="max-w-7xl w-full mx-auto relative z-10">
 
         {/* ── Section title ── */}
-        <div className="text-center mb-14 md:mb-20">
-          <h2 className="text-[var(--size-h2)] font-extrabold text-white mb-2">
+        <div className="text-center mb-10 md:mb-14">
+          <h2 className="text-[var(--size-h2)] font-bold text-white mb-2">
             Tech Stack
           </h2>
           <p className="text-sm font-mono text-[var(--color-secondary)] uppercase tracking-widest">
@@ -95,11 +95,11 @@ export default function SkillsGrid() {
         </div>
 
         {/* ── Diamond grid ── */}
-        <div className="flex flex-col items-center gap-[3px] sm:gap-[5px] lg:gap-[8px]">
+        <div className="flex flex-col items-center gap-[2px] sm:gap-[4px] lg:gap-[6px]">
           {skillRows.map((row, rowIdx) => (
             <div
               key={rowIdx}
-              className="flex gap-[3px] sm:gap-[5px] lg:gap-[8px]"
+              className="flex gap-[2px] sm:gap-[4px] lg:gap-[6px]"
             >
               {row.map((skill) => (
                 <div
@@ -112,18 +112,18 @@ export default function SkillsGrid() {
                     hover:-translate-y-1 hover:scale-[1.08]
                     hover:shadow-[0_0_28px_rgba(139,92,246,0.45)]
 
-                    w-10 h-10 rounded-lg gap-[2px]
-                    sm:w-[66px] sm:h-[66px] sm:rounded-xl sm:gap-[3px]
-                    lg:w-[84px] lg:h-[84px] lg:gap-1.5
+                    w-9 h-9 rounded-lg gap-[2px]
+                    sm:w-[58px] sm:h-[58px] sm:rounded-xl sm:gap-[3px]
+                    lg:w-[72px] lg:h-[72px] lg:gap-1
                   "
                 >
                   {/* Icon — font-size controls devicon scale */}
-                  <div className="text-[18px] sm:text-[30px] lg:text-[38px] leading-none group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-[16px] sm:text-[26px] lg:text-[32px] leading-none group-hover:scale-110 transition-transform duration-300">
                     <TechIcon name={skill} />
                   </div>
 
                   {/* Label — hidden on mobile, visible sm+ */}
-                  <span className="hidden sm:block text-[7px] lg:text-[9px] font-mono text-gray-500 group-hover:text-gray-200 transition-colors text-center leading-tight max-w-full px-0.5 truncate">
+                  <span className="hidden sm:block text-[6px] lg:text-[8px] font-mono text-gray-500 group-hover:text-gray-200 transition-colors text-center leading-tight max-w-full px-0.5 truncate">
                     {skill}
                   </span>
                 </div>

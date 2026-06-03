@@ -165,14 +165,14 @@ export default function ContactTerminal() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative reveal-on-scroll">
+    <section id="contact" className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 relative reveal-on-scroll">
       <div className="radial-overlay bottom-[5%] right-[15%] bg-violet-600" />
       
       <div className="max-w-7xl w-full mx-auto relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-[var(--size-h2)] font-extrabold text-white mb-2">
+        <div className="text-center mb-10 md:mb-12">
+          <h2 className="text-[var(--size-h2)] font-bold text-white mb-2">
             Establish Connection
           </h2>
           <p className="text-sm font-mono text-[var(--color-secondary)] uppercase tracking-widest">
@@ -185,7 +185,7 @@ export default function ContactTerminal() {
           
           {/* Left Column: Direct GUI Message Card */}
           <div className="lg:col-span-6 flex">
-            <div className="glass-card p-6 md:p-8 w-full flex flex-col justify-between relative glow-violet">
+            <div className="glass-card p-5 md:p-6 w-full flex flex-col justify-between relative glow-violet">
               
               {/* Header Info */}
               <div className="mb-6">
@@ -313,7 +313,7 @@ export default function ContactTerminal() {
               </div>
 
               {/* Terminal Logs History Screen */}
-              <div className="terminal-body h-72 overflow-y-auto flex-grow flex flex-col justify-start text-left font-mono text-xs">
+              <div className="terminal-body h-60 overflow-y-auto flex-grow flex flex-col justify-start text-left font-mono text-xs">
                 {terminalHistory.map((log, index) => (
                   <div key={index} className={`mb-1.5 ${log.color} break-all`}>
                     {log.text}

@@ -21,13 +21,13 @@
   --color-glass-border: rgba(255, 255, 255, 0.08);
   --color-glass-glow: rgba(255, 255, 255, 0.03);
 
-  --font-body: 'Inter', sans-serif;
-  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Urbanist', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  --size-h1: clamp(2rem, 1.2rem + 4vw, 4rem);
-  --size-h2: clamp(1.6rem, 1rem + 2.5vw, 2.6rem);
-  --size-h3: clamp(1.2rem, 0.9rem + 1.2vw, 1.6rem);
+  --size-h1: clamp(1.75rem, 1rem + 3.2vw, 3.2rem);
+  --size-h2: clamp(1.35rem, 0.85rem + 2vw, 2.1rem);
+  --size-h3: clamp(1rem, 0.78rem + 0.95vw, 1.35rem);
 }
 
 @layer base {
@@ -107,8 +107,8 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-weight: 800;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    letter-spacing: -0.03em;
     color: #ffffff;
   }
 
