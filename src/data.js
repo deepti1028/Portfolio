@@ -9,7 +9,7 @@ export const resumeData = {
     linkedin: "https://www.linkedin.com/in/deepti1028/",
     leetcode: "https://leetcode.com/u/dipti_jain/",
     gfg: "https://www.geeksforgeeks.org/user/deeptihnd000/",
-    resumeDrive: "https://drive.google.com/file/d/1X5X8_eT50Q94G-1J-yB8x3eUv6qE8OAp/view?usp=sharing", // Customizable Drive URL placeholder
+    resumeDrive: "https://drive.google.com/file/d/1SPF93JFGhtD5J9q0h5wRrSRlqkD-vW-c/view?usp=sharing",
     location: "Gurgaon, India",
     summary: "Software engineer building across iOS, AI backends, full-stack web, and test automation — the kind who reads the docs, traces the bug to root cause, and ships it clean. Writes tests too, because once you've spent enough time hunting bugs, preventing them starts feeling like a sport. Always running on matcha; espresso is reserved for the dark all-nighters that somehow flip into breakthrough moments right when you finally find the thing. Genuinely loves hanging out with AI agents — who walks away from coworkers that quietly take tasks off your plate? Night owl or early bird depending on what's on fire. Always up for a new café and a harder problem."
   },
@@ -89,10 +89,10 @@ export const resumeData = {
       title: "ReelMind",
       subtitle: "AI-Powered Reel Library with RAG Chat",
       technologies: "Swift, SwiftUI, FastAPI, Celery, Redis, Supabase, Groq, Gemini API",
-      demoLink: "#",
-      githubLink: "#",
+      demoLink: "https://www.youtube.com/watch?v=BYqgeYKpoJs",
+      githubLink: "https://github.com/deepti1028/ReelMind",
       badge: { label: "iOS + RAG Pipeline", color: "violet" },
-      demoType: "demo",
+      demoType: "youtube",
       description: "Have you ever saved an Instagram Reel — a travel guide, a recipe, a workout — and weeks later, when you actually needed it, couldn't find it buried under 100 others? ReelMind fixes that. It automatically organizes everything you save, so you can find it later just by describing what you remember.",
       details: [
         "Built a 7-stage async ingestion pipeline on FastAPI + Celery + Redis with fault-tolerant retries at each stage — so a failed classification or a flaky API call doesn't silently drop a reel from your library.",
