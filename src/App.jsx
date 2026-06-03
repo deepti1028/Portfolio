@@ -84,9 +84,9 @@ export default function App() {
 
           {/* Core statement */}
           <p className="text-xs font-mono text-gray-500 flex flex-wrap items-center justify-center text-center md:text-left gap-1.5">
-            <span>Tracing the bugs and shipping clean code with</span>
+            <span>Connecting the dots from raw data to scalable, full-stack platforms with</span>
             <Heart size={10} className="text-red-500 fill-current animate-pulse inline-block" />
-            <span>&amp; zero regressions.</span>
+            <span>and a lot of matcha. 🍵</span>
           </p>
 
           {/* Social Profiles */}
