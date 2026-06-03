@@ -14,7 +14,7 @@ export const resumeData = {
     summary: "Software engineer building across iOS, AI backends, full-stack web, and test automation — the kind who reads the docs, traces the bug to root cause, and ships it clean. Writes tests too, because once you've spent enough time hunting bugs, preventing them starts feeling like a sport. Always running on matcha; espresso is reserved for the dark all-nighters that somehow flip into breakthrough moments right when you finally find the thing. Genuinely loves hanging out with AI agents — who walks away from coworkers that quietly take tasks off your plate? Night owl or early bird depending on what's on fire. Always up for a new café and a harder problem."
   },
 
-  
+
   statistics: {
     leetcodeRating: 1728,
     leetcodeSolved: 800,
@@ -31,14 +31,13 @@ export const resumeData = {
       role: "Software Test Engineer",
       duration: "Oct 2025 - Present",
       location: "Gurgaon, India",
-      metrics: { coverage: "95%", regressionTime: "-60%", bugsCaughtDev: "45+" },
+      metrics: { testCases: "500+", feedbackLoop: "40 mins", crossBrowser: "3 Browsers" },
       bulletPoints: [
-        "Transitioned testing from fully manual execution to automated CI-integrated pipelines, enabling continuous validation and improving release reliability.",
-        "Solely own the end-to-end testing strategy for a platform, ensuring reliability across critical business workflows.",
-        "Designed and implemented scalable automation using Playwright + TypeScript, enabling cross-browser E2E testing with parallel execution and optimized runtime.",
-        "Built comprehensive regression suites to ensure production-grade stability before releases."
+        "Architected a robust end-to-end testing framework from the ground up using Playwright and TypeScript to migrate the business-critical IPD (In-Patient Department) module from slow manual verification to continuous automation, writing 500+ stable UI test cases that secure complex healthcare user journeys.",
+        "Embedded the test suite directly into Jenkins CI/CD pipelines across DEV and QA environments. Optimized parallel execution to slice validation feedback down to a tight 40-minute window, enabling developers to catch regressions and debug issues before code ever gets merged.",
+        "Engineered a parallel cross-browser execution model in Playwright. Solved complex test-data isolation and timing flakiness to lock down 100% feature coverage across 4 core IPD modules, and stabilized critical user paths on a highly dynamic 5th module."
       ],
-      techStack: ["Playwright", "TypeScript", "CI/CD", "Regression Testing", "Node.js", "Git"]
+      techStack: ["Playwright", "TypeScript", "Jenkins", "CI/CD", "Cross-Browser Testing", "Git"]
     },
     {
       id: "zscaler",
@@ -46,14 +45,14 @@ export const resumeData = {
       role: "Software Developer Intern",
       duration: "Feb 2025 - Aug 2025",
       location: "Bangalore, India",
-      metrics: { manualEffortSaved: "10 hrs/wk", testCoverage: "+30%", dashboardSpeed: "3x" },
+      metrics: { opsOverhead: "-10 hrs/wk", storageSaved: "75% Drop", dashboardSync: "3x Faster" },
       bulletPoints: [
-        "Designed and built a secure full-stack web app (React & FastAPI) to execute predefined server commands via UI, reducing manual effort by 10 hours per week.",
-        "Developed checksum-based daily backup scripts in Python and a configuration backup model, reducing storage overhead and backend maintenance effort.",
-        "Conducted manual and automated testing using pytest for the Filetype Control module, a key cybersecurity feature, boosting test coverage by 30%.",
-        "Integrated Zscaler APIs to automate node access/status, cutting manual monitoring tasks by 50% and improving dashboard update speed by 3x."
+        "Designed and built a secure, role-based internal application using React and FastAPI that allowed team members to safely run server operations via a clean UI, reducing team operational overhead by 10 hours/week.",
+        "Architected a custom checksum-based differential backup system in Python. By storing configuration diffs instead of redundant full backups, I reduced daily proxy configuration storage by 75% and optimized sync runtimes.",
+        "Hardened the Filetype Control module—a core cybersecurity gateway feature—by building an automated verification pipeline that checked edge cases and bypass exploits, boosting system reliability and securing the code path by 30%.",
+        "Orchestrated Zscaler platform APIs to automate node status monitoring, cutting down manual monitoring overhead by 50% and redesigning the ingestion pipeline to sync system health data 3x faster."
       ],
-      techStack: ["React", "FastAPI", "Python", "Pytest", "REST APIs", "Automation"]
+      techStack: ["React", "FastAPI", "Python", "Pytest", "REST APIs", "System Integration"]
     },
     {
       id: "optica",
@@ -61,13 +60,13 @@ export const resumeData = {
       role: "Technical Member",
       duration: "Aug 2022 - Aug 2023",
       location: "JIIT, Noida",
-      metrics: { usersReached: "2k+", eventUptime: "99.9%", hackathonRank: "1st" },
+      metrics: { hackathonRank: "1st Place", dsaSessions: "DSA Classes", symposium: "JSCOP" },
       bulletPoints: [
-        "Enhanced and maintained the JIIT OPTICA official website by adding new features and ensuring seamless performance.",
-        "Provided innovative technical solutions for campus hackathons and technological events with consistent, high-quality work.",
-        "Co-organized Optica Internal Hackathon, leading engineering solutions and mentoring junior participants."
+        "Won 1st Place at the Optica Internal Hackathon by engineering <a href='#concadmic' class='text-[var(--color-primary)] hover:underline font-semibold'>Concadmic</a>—a student networking and blogging platform—using React and Firebase, designed to bridge communications gaps on campus.",
+        "Conducted a series of technical workshops on Data Structures & Algorithms (DSA) for junior students, teaching core concepts in dynamic programming, recursion, and search algorithms to help them build strong problem-solving skills.",
+        "Co-organized and managed events for JSCOP (Optica's flagship annual symposium), coordinating operations and event flows to ensure a seamless experience for participating teams."
       ],
-      techStack: ["React", "HTML5", "CSS3", "JavaScript", "Bootstrap", "Git"]
+      techStack: ["React", "Firebase", "C++", "Data Structures", "Event Management", "Git"]
     },
     {
       id: "jiit",
@@ -75,13 +74,13 @@ export const resumeData = {
       role: "B.Tech in Computer Science",
       duration: "2021 - 2025",
       location: "Noida, India",
-      metrics: { cgpa: "7.4 / 10", dsaProblems: "1100+", certsEarned: "4+" },
+      metrics: { cgpa: "7.4 / 10", dsaProblems: "1100+", certifications: "2+" },
       bulletPoints: [
-        "Acquired deep foundations in Data Structures & Algorithms, Object-Oriented Programming, Operating Systems, Database Management Systems, and System Design.",
-        "Awarded 1st prize at the Optica Internal Hackathon for building an innovative networking and blogging application.",
-        "Completed certified specialization in Advanced Data Structures & Web Architectures."
+        "Built strong theoretical and practical foundations in Computer Science, focusing on Data Structures & Algorithms (DSA), Object-Oriented Programming (OOP), Database Management Systems (DBMS), and System Design.",
+        "Engineered <a href='#concadmic' class='text-[var(--color-primary)] hover:underline font-semibold'>Concadmic</a>, a campus networking and blogging application, securing 1st Place at the Optica Internal Hackathon.",
+        "Completed certified specializations in <a href='https://www.udemy.com/certificate/UC-f37b8b03-1013-410e-ae22-b9d6fa206d93/' target='_blank' rel='noopener noreferrer' class='text-[var(--color-primary)] hover:underline font-semibold'>Advanced Data Structures & Algorithms</a> and <a href='https://www.udemy.com/certificate/UC-36252ddd-e012-41d0-96f2-5edf0e292eb4/' target='_blank' rel='noopener noreferrer' class='text-[var(--color-primary)] hover:underline font-semibold'>Full-Stack Web Development</a>."
       ],
-      techStack: ["C/C++", "Java", "Python", "SQL", "Data Structures & Algorithms", "System Design"]
+      techStack: ["C/C++", "Java", "Python", "SQL", "Data Structures", "Computer Networks", "Database Management", "OOPS"]
     }
   ],
 
@@ -135,10 +134,11 @@ export const resumeData = {
   ],
 
   skills: {
-    languages: ["C/C++", "Python", "Java", "JavaScript", "TypeScript", "HTML", "CSS", "SQL"],
-    frameworks: ["React", "FastAPI", "Node.js", "Express", "Playwright", "Pytest", "Bootstrap"],
-    tools: ["Git", "GitHub", "VS Code", "Sublime Text", "Postman", "CI/CD Pipelines"],
-    databases: ["MySQL", "MongoDB", "Firebase (Firestore, Auth)", "PostgreSQL"]
+    languages: ["C/C++", "Python", "Java", "JavaScript", "TypeScript", "Swift", "SQL", "HTML", "CSS"],
+    frameworks: ["React", "Node.js", "Express", "FastAPI", "SwiftUI", "Playwright", "Pytest", "Bootstrap", "LangChain"],
+    aiml: ["Groq API", "Gemini API", "RAG", "Pinecone", "pgvector"],
+    cloudAndDb: ["PostgreSQL", "MongoDB", "MySQL", "Firebase", "Supabase", "Redis", "Docker", "Jenkins", "Celery", "CI/CD"],
+    tools: ["Git", "GitHub", "Puppeteer", "Postman", "VS Code", "Sublime Text"]
   },
 
   achievements: [
