@@ -11,7 +11,7 @@ export const resumeData = {
     gfg: "https://www.geeksforgeeks.org/user/deeptihnd000/",
     resumeDrive: "https://drive.google.com/file/d/1SPF93JFGhtD5J9q0h5wRrSRlqkD-vW-c/view?usp=sharing",
     location: "Gurgaon, India",
-    summary: "Software engineer building across iOS, AI backends, full-stack web, and test automation, the kind who reads the docs, traces the bug to root cause, and ships it clean. Writes tests too, because once you've spent enough time hunting bugs, preventing them starts feeling like a sport. Always running on matcha; espresso is reserved for the dark all-nighters that somehow flip into breakthrough moments right when you finally find the thing. Genuinely loves hanging out with AI agents (who walks away from coworkers that quietly take tasks off your plate?). Night owl or early bird depending on what's on fire. Always up for a new café and a harder problem."
+    summary: "Software engineer building across iOS, AI backends, full-stack web, and test automation, who finds the fun somewhere in the hard parts. Writes tests too, because once you've spent enough time hunting bugs, preventing them starts feeling like a sport. Always running on matcha; espresso is reserved for the dark all-nighters that somehow flip into breakthrough moments right when you finally find the thing. Genuinely loves hanging out with AI agents (who walks away from coworkers that quietly take tasks off your plate?). Night owl or early bird depending on what's on fire. Always up for a new café and a harder problem."
   },
 
 
@@ -62,7 +62,7 @@ export const resumeData = {
       location: "JIIT, Noida",
       metrics: { hackathonRank: "1st Place", dsaSessions: "DSA Classes", symposium: "JSCOP" },
       bulletPoints: [
-        "Won 1st Place at the Optica Internal Hackathon by engineering <a href='#concadmic' class='text-[var(--color-primary)] hover:underline font-semibold'>Concadmic</a>—a student networking and blogging platform—using React and Firebase, designed to bridge communications gaps on campus.",
+        "Won 1st Place at the Optica Internal Hackathon by engineering <a href='#concadmic' class='text-[var(--color-primary)] hover:underline font-semibold'>Concadmic</a>, a student networking and blogging platform, using React and Firebase, designed to bridge communications gaps on campus.",
         "Conducted a series of technical workshops on Data Structures & Algorithms (DSA) for junior students, teaching core concepts in dynamic programming, recursion, and search algorithms to help them build strong problem-solving skills.",
         "Co-organized and managed events for JSCOP (Optica's flagship annual symposium), coordinating operations and event flows to ensure a seamless experience for participating teams."
       ],
@@ -89,15 +89,15 @@ export const resumeData = {
       title: "ReelMind",
       subtitle: "AI-Powered Reel Library with RAG Chat",
       technologies: "Swift, SwiftUI, FastAPI, Celery, Redis, Supabase, Groq, Gemini API",
-      demoLink: "https://www.youtube.com/watch?v=BYqgeYKpoJs",
+      demoLink: "https://www.youtube.com/shorts/xZze8czLmlI",
       githubLink: "https://github.com/deepti1028/ReelMind",
       badge: { label: "iOS + RAG Pipeline", color: "violet" },
       demoType: "youtube",
-      description: "Have you ever saved an Instagram Reel — a travel guide, a recipe, a workout — and weeks later, when you actually needed it, couldn't find it buried under 100 others? ReelMind fixes that. It automatically organizes everything you save, so you can find it later just by describing what you remember.",
+      description: "Have you ever saved an Instagram Reel (a travel guide, a recipe, a workout) and weeks later, when you actually needed it, couldn't find it buried under 100 others? ReelMind fixes that. It automatically organizes everything you save, so you can find it later just by describing what you remember.",
       details: [
-        "Built a 7-stage async ingestion pipeline on FastAPI + Celery + Redis with fault-tolerant retries at each stage — so a failed classification or a flaky API call doesn't silently drop a reel from your library.",
-        "Search runs on a RAG pipeline: reel content gets embedded as 768-dim vectors via Gemini Embedding API, stored in Supabase pgvector, and queried with semantic similarity at runtime — Gemini 2.5 Flash then generates a grounded answer with the retrieved context.",
-        "Once a reel finishes processing, the backend triggers Firebase Cloud Messaging to deliver a push notification with dynamic action buttons to the iOS client — closing the loop between background ingestion and what the user actually sees."
+        "Built a 7-stage async ingestion pipeline on FastAPI + Celery + Redis with fault-tolerant retries at each stage, so a failed classification or a flaky API call doesn't silently drop a reel from your library.",
+        "Search runs on a RAG pipeline: reel content gets embedded as 768-dim vectors via Gemini Embedding API, stored in Supabase pgvector, and queried with semantic similarity at runtime; Gemini 2.5 Flash then generates a grounded answer with the retrieved context.",
+        "Once a reel finishes processing, the backend triggers Firebase Cloud Messaging to deliver a push notification with dynamic action buttons to the iOS client, closing the loop between background ingestion and what the user actually sees."
       ]
     },
     {
@@ -108,12 +108,12 @@ export const resumeData = {
       githubLink: "https://github.com/XoXoHarsh/Trade-Alert",
       badge: { label: "Real-Time Analytics", color: "violet" },
       demoType: "youtube",
-      description: "By the time financial news reaches you — through Twitter, a forward, or some app — the stock has already moved. That's the window you missed. Trade Alert monitors the financial sources that actually set market sentiment, filters only for the stocks you're watching, and gets it to you before it's priced in.",
+      description: "By the time financial news reaches you (through Twitter, a forward, or some app), the stock has already moved. That's the window you missed. Trade Alert monitors the financial sources that actually set market sentiment, filters only for the stocks you're watching, and gets it to you before it's priced in.",
       details: [
-        "Scraped 8+ financial news portals with Puppeteer — most of these portals render content client-side, so a raw HTTP fetch returns empty HTML. Per-user company and priority filters are applied at ingestion time to skip processing irrelevant articles entirely.",
-        "Ran articles through a two-stage LangChain + Groq (Llama 3.1 70B) pipeline: first pass condenses raw scraped text into a market-relevant summary, second pass extracts which user-tracked companies are mentioned. Splitting the stages kept each prompt narrowly focused — combined prompts produced noisier company detection.",
-        "Used Pinecone to match news against the company index semantically rather than by string — catches references like 'AAPL', 'Cupertino giant', or a CEO mention all resolving to the same watchlist entry.",
-        "Final step fires a Firebase FCM push notification to the user's device. End-to-end flow — scrape → summarize → match → notify — runs in seconds."
+        "Scraped 8+ financial news portals with Puppeteer; most of these portals render content client-side, so a raw HTTP fetch returns empty HTML. Per-user company and priority filters are applied at ingestion time to skip processing irrelevant articles entirely.",
+        "Ran articles through a two-stage LangChain + Groq (Llama 3.1 70B) pipeline: first pass condenses raw scraped text into a market-relevant summary, second pass extracts which user-tracked companies are mentioned. Splitting the stages kept each prompt narrowly focused; combined prompts produced noisier company detection.",
+        "Used Pinecone to match news against the company index semantically rather than by string, catching references like 'AAPL', 'Cupertino giant', or a CEO mention all resolving to the same watchlist entry.",
+        "Final step fires a Firebase FCM push notification to the user's device. End-to-end flow (scrape → summarize → match → notify) runs in seconds."
       ]
     },
     {
@@ -126,9 +126,9 @@ export const resumeData = {
       demoType: "external",
       description: "The COVID batch joined college without setting foot on campus. All the knowledge that normally travels through mess queues, hostel corridors, and cafe runs (which elective is worth it, which professor actually teaches, what clubs are real) had no channel to travel through. Concademic was that channel: a campus-only platform where seniors could reach the juniors who needed them.",
       details: [
-        "Built a full direct messaging system — user search, conversation threads, real-time message delivery — where messages appear on both sides the moment they're sent, no polling. Scoped chat state to a dedicated React Context so incoming message callbacks don't trigger re-renders across the blog feed or events page.",
-        "Built category and tag filtering as two independent discovery paths, each with its own route, so a post tagged 'internship' under 'placements' shows up in both browse flows the moment it goes live — no extra step, no duplication.",
-        "Built the full post authoring flow — create, edit, delete — with tags and category assigned at write time, so content is structured and queryable from the moment it's published rather than needing retroactive organization."
+        "Built a full direct messaging system (user search, conversation threads, real-time message delivery) where messages appear on both sides the moment they're sent, no polling. Scoped chat state to a dedicated React Context so incoming message callbacks don't trigger re-renders across the blog feed or events page.",
+        "Built category and tag filtering as two independent discovery paths, each with its own route, so a post tagged 'internship' under 'placements' shows up in both browse flows the moment it goes live, no extra step, no duplication.",
+        "Built the full post authoring flow (create, edit, delete) with tags and category assigned at write time, so content is structured and queryable from the moment it's published rather than needing retroactive organization."
       ]
     }
   ],
