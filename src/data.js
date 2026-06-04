@@ -11,7 +11,7 @@ export const resumeData = {
     gfg: "https://www.geeksforgeeks.org/user/deeptihnd000/",
     resumeDrive: "https://drive.google.com/file/d/1SPF93JFGhtD5J9q0h5wRrSRlqkD-vW-c/view?usp=sharing",
     location: "Gurgaon, India",
-    summary: "Software engineer building across iOS, AI backends, full-stack web, and test automation — the kind who reads the docs, traces the bug to root cause, and ships it clean. Writes tests too, because once you've spent enough time hunting bugs, preventing them starts feeling like a sport. Always running on matcha; espresso is reserved for the dark all-nighters that somehow flip into breakthrough moments right when you finally find the thing. Genuinely loves hanging out with AI agents — who walks away from coworkers that quietly take tasks off your plate? Night owl or early bird depending on what's on fire. Always up for a new café and a harder problem."
+    summary: "Software engineer building across iOS, AI backends, full-stack web, and test automation, the kind who reads the docs, traces the bug to root cause, and ships it clean. Writes tests too, because once you've spent enough time hunting bugs, preventing them starts feeling like a sport. Always running on matcha; espresso is reserved for the dark all-nighters that somehow flip into breakthrough moments right when you finally find the thing. Genuinely loves hanging out with AI agents (who walks away from coworkers that quietly take tasks off your plate?). Night owl or early bird depending on what's on fire. Always up for a new café and a harder problem."
   },
 
 
@@ -49,7 +49,7 @@ export const resumeData = {
       bulletPoints: [
         "Designed and built a secure, role-based internal application using React and FastAPI that allowed team members to safely run server operations via a clean UI, reducing team operational overhead by 10 hours/week.",
         "Architected a custom checksum-based differential backup system in Python. By storing configuration diffs instead of redundant full backups, I reduced daily proxy configuration storage by 75% and optimized sync runtimes.",
-        "Hardened the Filetype Control module—a core cybersecurity gateway feature—by building an automated verification pipeline that checked edge cases and bypass exploits, boosting system reliability and securing the code path by 30%.",
+        "Hardened the Filetype Control module, a core cybersecurity gateway feature, by building an automated verification pipeline that checked edge cases and bypass exploits, boosting system reliability and securing the code path by 30%.",
         "Orchestrated Zscaler platform APIs to automate node status monitoring, cutting down manual monitoring overhead by 50% and redesigning the ingestion pipeline to sync system health data 3x faster."
       ],
       techStack: ["React", "FastAPI", "Python", "Pytest", "REST APIs", "System Integration"]
@@ -124,7 +124,7 @@ export const resumeData = {
       githubLink: "https://github.com/deepti1028/Concadmic",
       badge: { label: "1st Prize Hackathon", color: "yellow" },
       demoType: "external",
-      description: "The COVID batch joined college without setting foot on campus. All the knowledge that normally travels through mess queues, hostel corridors, and cafe runs — which elective is worth it, which professor actually teaches, what clubs are real — had no channel to travel through. Concademic was that channel: a campus-only platform where seniors could reach the juniors who needed them.",
+      description: "The COVID batch joined college without setting foot on campus. All the knowledge that normally travels through mess queues, hostel corridors, and cafe runs (which elective is worth it, which professor actually teaches, what clubs are real) had no channel to travel through. Concademic was that channel: a campus-only platform where seniors could reach the juniors who needed them.",
       details: [
         "Built a full direct messaging system — user search, conversation threads, real-time message delivery — where messages appear on both sides the moment they're sent, no polling. Scoped chat state to a dedicated React Context so incoming message callbacks don't trigger re-renders across the blog feed or events page.",
         "Built category and tag filtering as two independent discovery paths, each with its own route, so a post tagged 'internship' under 'placements' shows up in both browse flows the moment it goes live — no extra step, no duplication.",
