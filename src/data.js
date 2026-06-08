@@ -89,7 +89,7 @@ export const resumeData = {
       title: "ReelMind",
       subtitle: "AI-Powered Reel Library with RAG Chat",
       technologies: "Swift, SwiftUI, FastAPI, Celery, Redis, Supabase, Groq, Gemini API",
-      demoLink: "https://www.youtube.com/shorts/xZze8czLmlI",
+      demoLink: "https://youtube.com/shorts/heTbBjLPAQ4?si=1wNrkAvJHKJ7ySL1",
       githubLink: "https://github.com/deepti1028/ReelMind",
       badge: { label: "iOS + RAG Pipeline", color: "violet" },
       demoType: "youtube",
